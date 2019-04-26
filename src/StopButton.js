@@ -1,8 +1,8 @@
 import React from 'react';
 
-function StopButton(prop) {
+function StopButton(props) {
     return (
-        <button>
+        <button onClick={props.handler}>
             STOP
         </button>
     )

@@ -2,7 +2,7 @@ import React from 'react';
 
 function StartButton(props) {
     return (
-        <button>
+        <button onClick={props.handler}>
             START
         </button>
     )
