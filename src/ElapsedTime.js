@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StopWatch(props) {
+function ElapsedTime(props) {
     return (
         <div>
             <h1>
@@ -12,16 +12,9 @@ function StopWatch(props) {
             <h1>
                 SECONDS: {props.seconds % 60}
             </h1>
-            <button onClick={props.handleStart}>
-                START
-            </button>
-            <button onClick={props.handleStop}>
-                STOP
-            </button>
-            <button onClick={props.handleReset}>RESET</button>
         </div>
     )
 }
 
 
-export default StopWatch;
+export default ElapsedTime;

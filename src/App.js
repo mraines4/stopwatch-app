@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import StopWatch from './StopWatch';
+import ElapsedTime from './ElapsedTime';
+import StartButton from './StartButton';
+import StopButton from './StopButton';
+import ResetButton from './ResetButton';
 
 
 class App extends React.Component {
@@ -19,13 +22,17 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <StopWatch status={this.state.counting} seconds={this.state.seconds} handleStart={this._startsTimer} handleStop={this._stopTimer} handleReset={this._resetTimer}/>
+          <ElapsedTime seconds={this.state.seconds} />
+          <StartButton handleStart={this._startsTimer} />
+          <StopButton handleStop={this._stopTimer} />
+          <ResetButton handleReset={this._resetTimer} />
         </header>
       </div>
     );
   }
 
   _startsTimer = () => {
+    clearInterval(this.something);
     this.setState({
       counting: true
     })
@@ -35,7 +42,7 @@ class App extends React.Component {
           seconds: this.state.seconds + 1
         })
       }
-    }, 1000)    
+    }, 10)    
   }
   _stopTimer = () => {
     clearInterval(this.something);

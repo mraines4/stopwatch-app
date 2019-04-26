@@ -2,7 +2,7 @@ import React from 'react';
 
 function StopButton(props) {
     return (
-        <button onClick={props.handler}>
+        <button onClick={props.handleStop}>
             STOP
         </button>
     )
