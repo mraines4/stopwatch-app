@@ -4,7 +4,13 @@ function StopWatch(props) {
     return (
         <div>
             <h1>
-                {props.time}
+                HOURS: {Math.floor(props.seconds / 3600)}
+            </h1>
+            <h1>
+                MINUTES: {Math.floor((props.seconds / 60) % 60 )}
+            </h1>
+            <h1>
+                SECONDS: {props.seconds % 60}
             </h1>
             <button onClick={props.handleStart}>
                 START

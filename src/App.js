@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      time: 0,
+      seconds: 0,
       counting: false,
     }
   }
@@ -19,7 +19,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <StopWatch status={this.state.counting} time={this.state.time} handleStart={this._startsTimer} handleStop={this._stopTimer} handleReset={this._resetTimer}/>
+          <StopWatch status={this.state.counting} seconds={this.state.seconds} handleStart={this._startsTimer} handleStop={this._stopTimer} handleReset={this._resetTimer}/>
         </header>
       </div>
     );
@@ -32,7 +32,7 @@ class App extends React.Component {
     this.something = setInterval(() => {
       if(this.state.counting) {
         this.setState({
-          time: this.state.time + 1
+          seconds: this.state.seconds + 1
         })
       }
     }, 1000)    
@@ -47,7 +47,7 @@ class App extends React.Component {
     clearInterval(this.something);
     this.setState({
       counting: false,
-      time: 0
+      seconds: 0
     })
   }
 }
