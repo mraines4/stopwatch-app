@@ -6,13 +6,12 @@ function StopWatch(props) {
             <h1>
                 {props.time}
             </h1>
-            { props.status === false ? 
             <button onClick={props.handleStart}>
                 START
-            </button> : 
+            </button>
             <button onClick={props.handleStop}>
                 STOP
-            </button>}
+            </button>
         </div>
     )
 }
