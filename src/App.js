@@ -19,7 +19,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <StopWatch status={this.state.counting} time={this.state.time} handleStart={this._startsTimer} handleStop={this._stopTimer}/>
+          <StopWatch status={this.state.counting} time={this.state.time} handleStart={this._startsTimer} handleStop={this._stopTimer} handleReset={this._resetTimer}/>
         </header>
       </div>
     );
@@ -41,6 +41,13 @@ class App extends React.Component {
     clearInterval(this.something);
     this.setState({
       counting: false
+    })
+  }
+  _resetTimer = () => {
+    clearInterval(this.something);
+    this.setState({
+      counting: false,
+      time: 0
     })
   }
 }

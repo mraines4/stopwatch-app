@@ -12,6 +12,7 @@ function StopWatch(props) {
             <button onClick={props.handleStop}>
                 STOP
             </button>
+            <button onClick={props.handleReset}>RESET</button>
         </div>
     )
 }
