@@ -42,7 +42,7 @@ class App extends React.Component {
           seconds: this.state.seconds + 1
         })
       }
-    }, 10)    
+    }, 1000)    
   }
   _stopTimer = () => {
     clearInterval(this.something);
